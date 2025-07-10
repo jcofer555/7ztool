@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Plugin>
+  <Author>Jon C</Author>
+  <Category>Utilities</Category>
+  <Name>7zTool</Name>
+  <Version>2025.07.10</Version>
+  <PluginURL>https://your-domain.local/7ztool.plg</PluginURL>
+  <MinVer>6.11.5</MinVer>
+  <Launch>index.php</Launch>
+  <Description>Archive and extract files using 7zzs with modal pickers and real-time feedback.</Description>
+  <Changes>
+    - Initial release  
+    - Archive and extract via 7zzs  
+    - Modal pickers with breadcrumb navigation  
+    - File size display  
+    - Logging with password redaction  
+    - Auto-refreshing log view  
+  </Changes>
+
+  <!-- Create folders -->
+  <mkdir>/boot/config/plugins/7ztool</mkdir>
+  <mkdir>/boot/config/plugins/7ztool/logs</mkdir>
+
+  <!-- Copy files -->
+  <file>
+    <source>index.php</source>
+    <destination>/usr/local/emhttp/plugins/7ztool/index.php</destination>
+    <mode>0755</mode>
+  </file>
+
+  <file>
+    <source>run.php</source>
+    <destination>/usr/local/emhttp/plugins/7ztool/run.php</destination>
+    <mode>0755</mode>
+  </file>
+
+  <file>
+    <source>browse.php</source>
+    <destination>/usr/local/emhttp/plugins/7ztool/browse.php</destination>
+    <mode>0755</mode>
+  </file>
+
+  <file>
+    <source>log.php</source>
+    <destination>/usr/local/emhttp/plugins/7ztool/log.php</destination>
+    <mode>0755</mode>
+  </file>
+
+  <file>
+    <source>picker.js</source>
+    <destination>/usr/local/emhttp/plugins/7ztool/picker.js</destination>
+    <mode>0644</mode>
+  </file>
+
+  <file>
+    <source>style.css</source>
+    <destination>/usr/local/emhttp/plugins/7ztool/style.css</destination>
+    <mode>0644</mode>
+  </file>
+
+  <file>
+    <source>spinner.gif</source>
+    <destination>/usr/local/emhttp/plugins/7ztool/spinner.gif</destination>
+    <mode>0644</mode>
+  </file>
+
+  <!-- On install, create empty logs if they don't exist -->
+  <execute>
+    <![CDATA[
+    touch /boot/config/plugins/7ztool/logs/operation.log
+    touch /boot/config/plugins/7ztool/logs/archive_history.log
+    touch /boot/config/plugins/7ztool/logs/extract_history.log
+    ]]>
+  </execute>
+</Plugin>

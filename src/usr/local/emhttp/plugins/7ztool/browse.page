@@ -1,0 +1,34 @@
+Menu="DiskUtilities"
+Type="xmenu"
+Title="Zip Manager"
+Icon="unzip.png"
+Tag="unzip.png"
+Markdown="false"
+---
+
+<form method="post" id="archiveForm">
+  <h2>Archive</h2>
+  <label>Source:</label>
+  <input type="text" name="source" id="sourceInput" readonly>
+  <button type="button" onclick="openPicker('source')">Pick Source</button>
+
+  <label>Destination:</label>
+  <input type="text" name="destination" id="destInput" readonly>
+  <button type="button" onclick="openPicker('destination')">Pick Destination</button>
+
+  <label>Password (optional):</label>
+  <input type="password" name="password">
+
+  <select name="format">
+    <option value="7z">.7z</option>
+    <option value="zip">.zip</option>
+    <option value="tar">.tar</option>
+    <option value="tar.gz">.tar.gz</option>
+  </select>
+
+  <button type="submit">Create Archive</button>
+</form>
+
+<div id="pickerModal" class="modal hidden">
+  <!-- AJAX content from browse.php will load here -->
+</div>
