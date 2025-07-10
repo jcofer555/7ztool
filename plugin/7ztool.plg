@@ -4,7 +4,7 @@
   <Category>Utilities</Category>
   <Name>7zTool</Name>
   <Version>2025.07.10</Version>
-  <PluginURL>https://your-domain.local/7ztool.plg</PluginURL>
+  <PluginURL>https://raw.githubusercontent.com/jcofer555/7ztool/refs/heads/main/plugin/7ztool.plg</PluginURL>
   <MinVer>6.11.5</MinVer>
   <Launch>index.php</Launch>
   <Description>Archive and extract files using 7zzs with modal pickers and real-time feedback.</Description>
